@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-/tbwCD0HGYsnchMHfmA4+5mOWeHdWUL/lYXIEDmTMJA='; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+<title>J.A.R.V.I.S.</title>
+</head>
+<body style="font:16px system-ui,sans-serif;background:#070b12;color:#e6eef8;display:grid;place-items:center;height:90vh;margin:0">
+<p id="m">Volviendo a J.A.R.V.I.S. en este ordenador…</p>
+<script>(function(){var q=new URLSearchParams(location.search),ok=/^[A-Za-z0-9._~-]{1,1024}$/,out=new URLSearchParams();['code','state','error'].forEach(function(k){var v=q.get(k);if(v&&ok.test(v))out.set(k,v)});history.replaceState(null,'',location.pathname);if(!out.get('state')){document.getElementById('m').textContent='Solicitud no válida. Vuelve a J.A.R.V.I.S.';return}location.replace('http://localhost:51888/oauth/callback?'+out.toString())})();</script>
+</body>
+</html>
