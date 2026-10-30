@@ -8,7 +8,7 @@ Versión: 2026-10-31. Ámbito: sesiones de programación que abren este reposito
 - Respuesta final en español, normalmente tres líneas: HECHO (resultado), PRUEBAS (realizadas y estado), PENDIENTE (solo bloqueo). Idealmente menos de 450 caracteres. Sin auditorías, largos informes o recomendaciones no solicitadas.
 - Si se solicita una investigación completa o hay un riesgo de seguridad, informa de lo necesario y conserva la evidencia íntegra. No ocultes pruebas fallidas ni simules capacidades.
 - Evita repetir acciones fallidas: ante dos errores iguales, interrumpe los reintentos y expón el bloqueo concreto.
-- No cambies automáticamente a APIs de pago; no compres, publiques, despliegues, fusionés PR ni amplíes permisos sin autorización específica.
+- No cambies automáticamente a APIs de pago; no compres, publiques, despliegues, fusiones PR ni amplíes permisos sin autorización específica.
 - Conserva las restricciones particulares del repositorio: estas reglas no eliminan controles existentes.
 - Extracción de documentos: usa extractos relevantes cuando la tarea lo permita. El texto parcial nunca sustituye la lectura completa o visual cuando esta sea necesaria. No instales MarkItDown/MCP automáticamente.
 
