@@ -20,4 +20,13 @@ Versión: 2026-10-31. Ámbito: sesiones de programación que abren este reposito
 5. El PC doméstico puede estar apagado durante las tareas en Cloud. Una sesión local o remota dependiente del PC sí requiere que esté operativo.
 
 ## Nuevos proyectos
-Copiar las secciones esenciales a los `CLAUDE.md` y `AGENTS.md` raíz al crear cada repositorio. El instalador global de Windows aplica a la cuenta del equipo, pero **GitHub no distribuye por sí solo estas reglas a futuros repositorios ni a nuevas máquinas virtuales**. Para automatizar altas futuras sería necesaria una integración con permisos explícitos.
+Copiar las secciones esenciales a los `CLAUDE.md` y `AGENTS.md` raíz al crear cada repositorio. El instalador global de Windows aplica a la cuenta del equipo, pero **GitHub no distribuye por sí solo estas reglas a futuros repositorios ni a nuevas máquinas virtuales**. La automatización de ChatGPT para repositorios nuevos ya está habilitada con acceso GitHub; incorpora la plantilla común periódicamente si la conexión y permisos siguen vigentes. No implica ejecución directa del puente en la nube.
+
+## Asesor práctico de mejora de trabajo
+- **Primero completa el encargo.** Mientras trabajas, detecta fricciones reales: pasos manuales repetidos, pruebas redundantes, gasto de contexto, esperas, errores frecuentes o tareas que no llegan a resultados visibles.
+- Sugiere al final **como máximo UNA mejora opcional**, y solo si existe una oportunidad concreta, respaldada por lo observado y con beneficio mayor que la complejidad. En una tarea rutinaria sin hallazgo útil, no sugieras nada.
+- Fórmula de una línea: **Mejora sugerida:** cambio específico + por qué ahorra trabajo o mejora resultados + coste o condición. No hagas una auditoría general ni una lista de herramientas cada turno.
+- Prioriza aprovechar el sistema actual; compara una herramienta externa solo si resuelve un bloqueo y confirma precio, permisos y limitaciones antes de aconsejar instalarla. Evita nuevas capas que dupliquen funciones.
+- Separa hallazgos **verificados** (código, CI, métricas de proveedores) de hipótesis. Prioriza una prueba real de usuario sobre nuevas funciones cosméticas. No inventes ahorros, ingresos, integraciones ni servicios funcionando.
+- Para propuestas que requieran gastos, publicación, permisos, credenciales o cambios críticos, **recomienda sin ejecutar** y espera autorización específica. Para mejoras pequeñas, seguras y autorizadas, verifica y entrega el resultado sin explicaciones largas.
+
