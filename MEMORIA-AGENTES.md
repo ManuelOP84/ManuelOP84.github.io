@@ -13,7 +13,7 @@ Página estática de retorno de autorización Samsung SmartThings hacia J.A.R.V.
 
 ## Pendiente
 
-- 2026-11-08 — Captación PixelCreAtI: mejoras de claridad y conversión del kit GRATUITO preparadas en la rama `captacion-particulares-pixelcreati-nov2026` (pendientes de PR, fusión y prueba móvil). Validación textual de enlace, ancla, descarga gratuita, `mailto`, privacidad y CSP superada. Sin formularios externos, seguimiento ni envíos activados.
+- 2026-11-08 — Captación PixelCreAtI: PR #10 **fusionado**; CI de GitHub Pages (run 42427040879) despliegue correcto. Enlace a inscripción voluntaria junto al kit y aclaración de descarga gratuita; validación textual 8/8. **Pendiente**: comprobar visualmente desde móvil y validar la entrega del kit en navegador externo. Sin formularios externos, seguimiento ni envíos comerciales activados.
 - `privacidad.html`: responsable identificado solo por nombre (decisión de Manuel, sin NIF).
 - Para futuros cambios, comprobar el retorno local y la seguridad antes de desplegar.
 - Activar *Code review* de Codex para este repo (decisión de Manuel) y repetir la prueba `@codex review` si no respondió.
