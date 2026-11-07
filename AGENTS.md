@@ -9,3 +9,7 @@
 - No exponer información de OAuth, claves ni parámetros sensibles, ni eliminar controles de seguridad del callback.
 - Conservar CSP, no añadir rastreo ni servicios externos, no desplegar automáticamente. Cambios en rama y PR.
 - Para colaborar con Claude Code Cloud, utilizar el commit/PR; ninguna sesión cloud está vinculada automáticamente con la otra.
+
+## Review guidelines
+- Revisa solo el diff del PR y la duda indicada. Informa únicamente P0/P1: seguridad, OAuth, CSP, secretos, pérdida de datos o regresiones claras. Sin estilo ni auditorías globales.
+- Sin hallazgos: 👍 o una línea. No propongas nuevas rondas ni hagas commits en la rama salvo petición expresa de Manuel.
