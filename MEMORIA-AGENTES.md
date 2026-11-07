@@ -12,6 +12,8 @@ Página estática de retorno de autorización Samsung SmartThings hacia J.A.R.V.
 - PixelCreAtI embudo: `pixelcreati/kit.html` (kit gratuito PDF en `recursos/`), `privacidad.html` y botón en `index.html`. Alta por mailto a pixelredmedia (la dirección se verifica sola al escribir).
 
 ## Pendiente
+
+- 2026-11-08 — Captación PixelCreAtI: mejoras de claridad y conversión del kit GRATUITO preparadas en la rama `captacion-particulares-pixelcreati-nov2026` (pendientes de PR, fusión y prueba móvil). Validación textual de enlace, ancla, descarga gratuita, `mailto`, privacidad y CSP superada. Sin formularios externos, seguimiento ni envíos activados.
 - `privacidad.html`: responsable identificado solo por nombre (decisión de Manuel, sin NIF).
 - Para futuros cambios, comprobar el retorno local y la seguridad antes de desplegar.
 - Activar *Code review* de Codex para este repo (decisión de Manuel) y repetir la prueba `@codex review` si no respondió.
