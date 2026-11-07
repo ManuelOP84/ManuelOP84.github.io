@@ -24,7 +24,7 @@ jobs:
       - name: Verificar enlaces de Amazon
         run: |
           : > .github/importar/amazon.txt
-          for asin in B0D7SR382J B0HPNXF4J4 B0HQGQ192R; do
+          for asin in B0HQTTPR65 B0HPM63656 B0FXDP1WK5; do
             t=$(curl -sL -m 20 -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36" -H "Accept-Language: es-ES,es;q=0.9" "https://www.amazon.es/dp/$asin" | grep -o '<title>[^<]*' | head -1)
             echo "$asin | $t" >> .github/importar/amazon.txt
           done
