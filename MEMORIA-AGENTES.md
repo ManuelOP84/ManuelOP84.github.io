@@ -8,11 +8,11 @@ Página estática de retorno de autorización Samsung SmartThings hacia J.A.R.V.
 - El repositorio incluye el callback descrito en `README.md` y las instrucciones móviles de Claude y Codex.
 - Revisión cruzada por riesgo (R0/R1/R2, máx. 2 rondas) añadida a `puente-compartido` y a `AGENTS.md` (Review guidelines). Preparado en PR; ver su descripción para el resultado de la prueba.
 
-- PixelCreAtI: portadas reales (libros 1-3 de El sueño de ser policía) y una página interior alojadas en `pixelcreati/img/` para emails; importación de Canva vía Actions (`.github/importar/README.md`). ASIN B0D7SR382J, B0HPNXF4J4 y B0HQGQ192R comprobados en Amazon.es el 2026-11-07.
+- PixelCreAtI: portadas reales (libros 1-3 de El sueño de ser policía) y una página interior alojadas en `pixelcreati/img/` para emails; importación de Canva vía Actions (`.github/importar/README.md`). ASIN B0D7SR382J, B0HPNXF4J4 y B0HQGQ192R, libro 4 B0HQTTPR65 (portada-4.jpg) comprobados en Amazon.es el 2026-11-07.
 - PixelCreAtI embudo: `pixelcreati/kit.html` (kit gratuito PDF en `recursos/`), `privacidad.html` y botón en `index.html`. Alta por mailto a pixelredmedia (la dirección se verifica sola al escribir).
 
 ## Pendiente
-- `privacidad.html`: falta nombre/NIF del responsable antes de activar campañas.
+- `privacidad.html`: responsable identificado solo por nombre (decisión de Manuel, sin NIF).
 - Para futuros cambios, comprobar el retorno local y la seguridad antes de desplegar.
 - Activar *Code review* de Codex para este repo (decisión de Manuel) y repetir la prueba `@codex review` si no respondió.
 
