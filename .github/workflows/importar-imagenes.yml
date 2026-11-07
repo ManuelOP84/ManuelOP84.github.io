@@ -28,6 +28,10 @@ jobs:
             t=$(curl -sL -m 20 -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36" -H "Accept-Language: es-ES,es;q=0.9" "https://www.amazon.es/dp/$asin" | grep -o '<title>[^<]*' | head -1)
             echo "$asin | $t" >> .github/importar/amazon.txt
           done
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36"
+          for q in "escuela+de+perros+polic%C3%ADa+PixelCreAtI" "PixelCreAtI+sue%C3%B1o+de+ser+polic%C3%ADa"; do
+            echo "busqueda $q | $(curl -sL -m 20 -A "$UA" -H 'Accept-Language: es-ES,es;q=0.9' "https://www.amazon.es/s?k=$q&i=stripbooks" | grep -oE 'data-asin="B0[A-Z0-9]{8}"' | sort -u | tr '\n' ' ')" >> .github/importar/amazon.txt
+          done
           r=$(curl -sIL -m 20 -o /dev/null -w '%{url_effective} %{http_code}' https://amzn.eu/d/8PC95v8); echo "amzn.eu/d/8PC95v8 | $r" >> .github/importar/amazon.txt
           cat .github/importar/amazon.txt
       - name: Guardar en la rama
