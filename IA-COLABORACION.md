@@ -1,6 +1,6 @@
 # Política de colaboración Claude Code + Codex — móvil, nube y escritorio
 
-Versión: 2026-10-31. Ámbito: sesiones de programación que abren este repositorio desde Claude Code (móvil/web/PC) o Codex (ChatGPT móvil/web/PC).
+Versión: 2026-11-07. Ámbito: sesiones de programación que abren este repositorio desde Claude Code (móvil/web/PC) o Codex (ChatGPT móvil/web/PC).
 
 ## Ahorro de uso y trabajo efectivo
 - Un único agente por encargo. No solicites revisión al segundo por defecto; justifica la intervención solo ante una dificultad concreta, riesgo importante o petición expresa.
@@ -18,9 +18,10 @@ Versión: 2026-10-31. Ámbito: sesiones de programación que abren este reposito
 3. El segundo agente revisa ese PR o commit **solo cuando proceda**, y responde al mismo contexto de GitHub. No presupongas que las sesiones aisladas se comunican automáticamente.
 4. Las credenciales de suscripción de Claude y ChatGPT son independientes. **GitHub comparte código y evidencias, no cuotas ni sesiones**. Un puente que llame a la CLI de la otra empresa no está disponible en la nube hasta verificar allí el ejecutable, inicio de sesión y permisos.
 5. El PC doméstico puede estar apagado durante las tareas en Cloud. Una sesión local o remota dependiente del PC sí requiere que esté operativo.
+6. **Revisión cruzada:** Claude Code desarrolla y Codex revisa solo los cambios `R2` mediante `@codex review` en el PR, con un máximo de dos rondas. Clasificación, límites y rescate en la skill `puente-compartido`.
 
 ## Nuevos proyectos
-Copiar las secciones esenciales a los `CLAUDE.md` y `AGENTS.md` raíz al crear cada repositorio. El instalador global de Windows aplica a la cuenta del equipo, pero **GitHub no distribuye por sí solo estas reglas a futuros repositorios ni a nuevas máquinas virtuales**. La automatización de ChatGPT para repositorios nuevos ya está habilitada con acceso GitHub; incorpora la plantilla común periódicamente si la conexión y permisos siguen vigentes. No implica ejecución directa del puente en la nube.
+Copiar las secciones esenciales a los `CLAUDE.md` y `AGENTS.md` raíz al crear cada repositorio. Incluir en `AGENTS.md` la sección `## Review guidelines` y las skills de `.claude/skills` y `.agents/skills`. El instalador global de Windows aplica a la cuenta del equipo, pero **GitHub no distribuye por sí solo estas reglas a futuros repositorios ni a nuevas máquinas virtuales**. La automatización de ChatGPT para repositorios nuevos ya está habilitada con acceso GitHub; incorpora la plantilla común periódicamente si la conexión y permisos siguen vigentes. No implica ejecución directa del puente en la nube.
 
 ## Asesor práctico de mejora de trabajo
 - **Primero completa el encargo.** Mientras trabajas, detecta fricciones reales: pasos manuales repetidos, pruebas redundantes, gasto de contexto, esperas, errores frecuentes o tareas que no llegan a resultados visibles.
