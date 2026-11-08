@@ -1,0 +1,16 @@
+name: PixelCreAtI · enlaces Brevo y kit
+on:
+  pull_request:
+    paths:
+      - 'pixelcreati/**'
+      - '.github/workflows/pixelcreati-suscripcion.yml'
+permissions:
+  contents: read
+jobs:
+  comprobar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 4
+    steps:
+      - uses: actions/checkout@v4
+      - name: Enlaces de suscripción, privacidad y descarga independiente
+        run: python3 -m unittest discover -s pixelcreati/test -p "test_*.py" -v
