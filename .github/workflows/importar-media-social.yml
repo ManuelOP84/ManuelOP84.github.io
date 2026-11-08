@@ -1,0 +1,69 @@
+name: Importar media de redes (Metricool → Pages)
+# Copia a pixelcreati/media/ los vídeos e imágenes promocionales de la cola de redes para
+# servirlos con URL pública, estable y HTTPS (requisito de la API de Buffer).
+# Solo material propio ya programado; nunca interiores KDP completos ni el maletín de 15 páginas.
+# Se activa al subir .github/importar/media.txt en una rama claude/*. No toca main.
+on:
+  push:
+    branches: ['claude/**']
+    paths: ['.github/importar/media.txt']
+permissions:
+  contents: write
+concurrency: importar-media-social
+jobs:
+  importar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Descargar y validar
+        run: |
+          sudo apt-get -qq install -y ffmpeg >/dev/null 2>&1 || true
+          mkdir -p pixelcreati/media
+          python3 - <<'PY'
+          import hashlib, json, os, subprocess, urllib.request
+          destino = "pixelcreati/media"
+          manifiesto = {}
+          ruta_m = os.path.join(destino, "manifiesto.json")
+          if os.path.exists(ruta_m):
+              manifiesto = json.load(open(ruta_m))
+          for linea in open(".github/importar/media.txt", encoding="utf-8"):
+              linea = linea.strip()
+              if not linea or linea.startswith("#"):
+                  continue
+              nombre, url = linea.split("|", 1)
+              if not url.startswith("https://static.metricool.com/"):
+                  print("RECHAZADO (origen no permitido)", nombre); continue
+              ruta = os.path.join(destino, nombre)
+              try:
+                  with urllib.request.urlopen(url, timeout=120) as r, open(ruta, "wb") as f:
+                      f.write(r.read())
+              except Exception as e:
+                  print("FALLO", nombre, e); continue
+              info = {"origen": url, "bytes": os.path.getsize(ruta),
+                      "sha256": hashlib.sha256(open(ruta, "rb").read()).hexdigest()}
+              try:
+                  out = subprocess.run(["ffprobe", "-v", "error", "-show_entries",
+                      "stream=codec_type,codec_name,width,height,r_frame_rate:format=duration",
+                      "-of", "json", ruta], capture_output=True, text=True, timeout=60).stdout
+                  pj = json.loads(out or "{}")
+                  v = next((s for s in pj.get("streams", []) if s.get("codec_type") == "video"), {})
+                  a = next((s for s in pj.get("streams", []) if s.get("codec_type") == "audio"), {})
+                  info.update({"ancho": v.get("width"), "alto": v.get("height"), "codec": v.get("codec_name"),
+                               "fps": v.get("r_frame_rate"), "audio": a.get("codec_name"),
+                               "duracion_s": round(float(pj.get("format", {}).get("duration") or 0), 2) or None})
+              except Exception as e:
+                  info["ffprobe_error"] = str(e)
+              manifiesto[nombre] = info
+              print("OK", nombre, info)
+          json.dump(manifiesto, open(ruta_m, "w"), indent=1, sort_keys=True)
+          PY
+      - name: Guardar en la rama
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+          git rm -q --cached .github/importar/media.txt || true
+          rm -f .github/importar/media.txt
+          git add pixelcreati/media .github/importar
+          git commit -m "Importar media de la cola de redes (Metricool)" || exit 0
+          git push
