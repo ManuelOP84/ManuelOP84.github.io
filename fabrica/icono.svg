@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#0b4f66"/>
+  <rect x="0" y="330" width="512" height="182" fill="#0b6b8a"/>
+    <path d="M256 168c-46-30-104-38-160-30v214c56-8 114 0 160 30z" fill="#ffffff"/>
+  <path d="M256 168c46-30 104-38 160-30v214c-56-8-114 0-160 30z" fill="#e6f2f6"/>
+  <path d="M256 168v214" stroke="#0b4f66" stroke-width="8"/>
+  <g fill="#0b6b8a" opacity=".55"><rect x="128" y="190" width="96" height="12" rx="6"/><rect x="128" y="222" width="80" height="12" rx="6"/><rect x="128" y="254" width="92" height="12" rx="6"/><rect x="128" y="286" width="70" height="12" rx="6"/></g>
+  <g fill="#f5b82e"><rect x="290" y="266" width="32" height="32" rx="4"/><rect x="326" y="266" width="32" height="32" rx="4"/><rect x="362" y="230" width="32" height="32" rx="4"/><rect x="326" y="302" width="32" height="32" rx="4" fill="#f08a24"/></g>
+  <path d="M384 92l40 40-120 120-52 12 12-52z" fill="#f5b82e" stroke="#0b4f66" stroke-width="10" stroke-linejoin="round"/>
+  <path d="M396 80l16-16a14 14 0 0 1 20 0l20 20a14 14 0 0 1 0 20l-16 16z" fill="#f08a24" stroke="#0b4f66" stroke-width="10" stroke-linejoin="round"/>
+</svg>
