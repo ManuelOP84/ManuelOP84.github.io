@@ -1,0 +1,15 @@
+{
+  "name": "Fábrica de Libros PixelCreAtI",
+  "short_name": "Fábrica",
+  "start_url": "abrir.html",
+  "scope": "./",
+  "display": "browser",
+  "background_color": "#0b4f66",
+  "theme_color": "#0b4f66",
+  "lang": "es",
+  "icons": [
+    { "src": "icono-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icono-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icono.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
