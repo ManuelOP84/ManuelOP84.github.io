@@ -19,7 +19,7 @@ class Anchors(HTMLParser):
 
 class BrevoLinks(unittest.TestCase):
     def test_enlaces_autenticos_e_identicos(self):
-        for page in ("index.html", "kit.html"):
+        for page in ("index.html", "kit.html", "club.html"):
             with self.subTest(page=page):
                 html = (ROOT / page).read_text(encoding="utf8")
                 parser = Anchors()
@@ -48,6 +48,17 @@ class BrevoLinks(unittest.TestCase):
         self.assertIn("pixelredmedia@gmail.com", html)
         self.assertIn("consentimiento expreso", html)
         self.assertIn("8 de noviembre de 2026", html)
+
+    def test_club_embudo(self):
+        html = (ROOT / "club.html").read_text(encoding="utf8")
+        for asin in ("B0D7SR382J", "B0HPNXF4J4", "B0HQGQ192R", "B0HQTTPR65"):
+            self.assertIn(f"https://www.amazon.es/dp/{asin}", html)
+        self.assertIn('href="recursos/kit-agente-en-practicas.pdf" download', html)
+        self.assertIn("https://www.instagram.com/pixelcreati_/", html)
+        self.assertIn("no te suscribe al correo", html)
+        for img in ("post-club.jpg", "historia-club.jpg", "club-canal.jpg"):
+            self.assertTrue((ROOT / "img" / img).exists())
+        self.assertIn('href="club.html"', (ROOT / "index.html").read_text(encoding="utf8"))
 
 if __name__ == "__main__":
     unittest.main()

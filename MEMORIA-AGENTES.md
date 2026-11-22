@@ -11,6 +11,8 @@ Página estática de retorno de autorización Samsung SmartThings hacia J.A.R.V.
 - PixelCreAtI: portadas reales (libros 1-3 de El sueño de ser policía) y una página interior alojadas en `pixelcreati/img/` para emails; importación de Canva vía Actions (`.github/importar/README.md`). ASIN B0D7SR382J, B0HPNXF4J4 y B0HQGQ192R, libro 4 B0HQTTPR65 (portada-4.jpg) comprobados en Amazon.es el 2026-11-07.
 - PixelCreAtI embudo: `pixelcreati/kit.html` (kit gratuito PDF en `recursos/`), `privacidad.html` y botón en `index.html`. Alta por mailto a pixelredmedia (la dirección se verifica sola al escribir).
 
+- 2026-11-22 — Club de Aventuras: `pixelcreati/club.html` (regalo kit + 4 libros + Brevo opcional), `difusion.html` (mensajes del canal, noindex) e imágenes del club. Generadores en el repo pixelcreati `marketing/instagram-difusion/`. Tests 5/5.
+
 ## Pendiente
 
 - 2026-11-08 — Captación PixelCreAtI: PR #10 **fusionado**; CI de GitHub Pages (run 42427040879) despliegue correcto. Enlace a inscripción voluntaria junto al kit y aclaración de descarga gratuita; validación textual 8/8. **Pendiente**: comprobar visualmente desde móvil y validar la entrega del kit en navegador externo. Sin formularios externos, seguimiento ni envíos comerciales activados.
