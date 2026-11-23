@@ -55,6 +55,7 @@ class BrevoLinks(unittest.TestCase):
             self.assertIn(f"https://www.amazon.es/dp/{asin}", html)
         self.assertIn('href="recursos/kit-agente-en-practicas.pdf" download', html)
         self.assertIn("https://www.instagram.com/pixelcreati_/", html)
+        self.assertIn("https://www.instagram.com/channel/A5Lbc4_M1CzaWTpk/", html)
         self.assertIn("no te suscribe al correo", html)
         for img in ("post-club.jpg", "historia-club.jpg", "club-canal.jpg"):
             self.assertTrue((ROOT / "img" / img).exists())
